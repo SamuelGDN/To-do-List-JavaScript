@@ -16,6 +16,7 @@ body {
   padding: 10px;
   max-width: 420px;
   margin: 0 auto;
+  height: 90vh;
 }
 
 @media screen and (max-width: 500px) {
@@ -27,7 +28,7 @@ body {
 /* ------------ header ------------ */
 .header {
   max-width: 100%;
-  height: 200px;
+  height: 20%;
   background-image: url("../img/bg2.jpg");
   background-size: 100% 200%;
   background-repeat: no-repeat;
@@ -40,7 +41,7 @@ body {
   height: 30px;
   position: absolute;
   right: 30px;
-  top: 65px;
+  top: 50px;
 }
 
 .clear button {
@@ -78,25 +79,21 @@ body {
 /* ------------ content ------------ */
 .content {
   max-width: 100%;
-  height: 280px;
-  max-height: 350px;
+  height: 75%;
+  /* max-height: 80%; */
   background-color: #fff;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-color: #4162f6 #d0d4e7;
   scrollbar-width: thin;
 }
-.content::-webkit-scrollbar {
-  /* display: none; */
-}
+
 .content ul {
   padding: 0;
   margin: 0;
 }
 .item {
   max-width: 100%;
-  /* height: 200px; */
-  /* min-height: 45px; */
   position: relative;
   display: flex;
   flex-wrap: nowrap;
@@ -109,13 +106,9 @@ body {
   width: 400px;
 }
 .item i.co {
-  /* position: absolute; */
   font-size: 25px;
   padding-left: 5px;
   width: 10%;
-
-  /* left:15px; */
-  /* top:10px; */
 }
 .item i.co:hover {
   cursor: pointer;
@@ -124,13 +117,10 @@ body {
   color: #6eb200;
 }
 .item p.text {
-  /* position: absolute; */
   padding: 0 5px;
   margin: 0;
   font-size: 20px;
   width: 75%;
-  /* left:50px; */
-  /* top:5px; */
   background-color: #fff;
   max-width: 285px;
   overflow-wrap: break-word;
@@ -140,11 +130,8 @@ body {
   color: #ccc;
 }
 .item i.de {
-  /* position: absolute; */
   font-size: 25px;
   width: 10%;
-  /* right:15px; */
-  /* top:10px; */
 }
 .item i.de:hover {
   color: #af0000;
@@ -154,9 +141,9 @@ body {
 .add-to-do {
   position: relative;
   max-width: 100%;
-  height: 40px;
+  height: 5%;
   background-color: #fff;
-  padding: 10px;
+  padding: 15px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 .add-to-do i {
@@ -218,28 +205,6 @@ body {
   color: #4162f6;
   font-size: 20px;
 }
-
-/*Scroll bar personalizada*/
-
-/* ::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #d0d4e7;
-  border-radius: 40px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #4162f6;
-  border-radius: 40px;
-} */
-
-/* html,
-html * {
-  scrollbar-color: #4162f6 #d0d4e7;
-  scrollbar-width: thin;
-} */
 
 ::-webkit-scrollbar {
     width: 8px;
