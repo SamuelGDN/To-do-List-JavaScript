@@ -14,6 +14,8 @@ const LINE_THROUGH = "lineThrough";
 //variaveis
 let List = [];
 let id = 0;
+let isedit = false;
+let editid;
 
 input.value = "";
 
@@ -47,12 +49,11 @@ function addToDo(todo, id, done, trash) {
   const item = `
   <li class="item">
   <i class="fa ${DONE} co" job="complete" id="${id}"></i>
-  <p class="text ${LINE}">${todo}</p>
+  <p class="text ${LINE}" id="task${id}">${todo}</p>
   <i class="fa fa-trash-o de" job="delete" id="${id}"></i> 
+  <i class="fa fa-pencil ed" job="delete" id="${id}"></i> 
   </li>
-
    `;
-
   list.insertAdjacentHTML(position, item);
 }
 
@@ -60,32 +61,36 @@ function addToDo(todo, id, done, trash) {
 input.addEventListener("keypress", (e) => {
   if (e.keyCode == 13) {
     if (!input.value) return;
-    addToDo(input.value, id, false, false);
-    List.push({
-      name: input.value,
-      id: id,
-      done: false,
-      trash: false,
-    });
+    if (!isedit) {
+      addToDo(input.value, id, false, false);
+      List.push({ name: input.value, id: id, done: false, trash: false });
+      id++;
+      localStorage.setItem("TODOLIST", JSON.stringify(List));
+    } else {
+      isedit = false;
+      List[editid].name = input.value
+      list.querySelector(`#task${editid}`).innerText = input.value
+      localStorage.setItem("TODOLIST", JSON.stringify(List));
+    }
     input.value = "";
-    id++;
-    localStorage.setItem("TODOLIST", JSON.stringify(List));
     input.focus();
   }
 });
 
-btnAddTask.addEventListener("click", (e) => {
+btnAddTask.addEventListener("click", () => {
   if (!input.value) return;
-  addToDo(input.value, id, false, false);
-  List.push({
-    name: input.value,
-    id: id,
-    done: false,
-    trash: false,
-  });
+  if (!isedit) {
+    addToDo(input.value, id, false, false);
+    List.push({ name: input.value, id: id, done: false, trash: false });
+    id++;
+    localStorage.setItem("TODOLIST", JSON.stringify(List));
+  } else {
+    isedit = false;
+    List[editid].name = input.value
+    list.querySelector(`#task${editid}`).innerText = input.value
+    localStorage.setItem("TODOLIST", JSON.stringify(List));
+  }
   input.value = "";
-  id++;
-  localStorage.setItem("TODOLIST", JSON.stringify(List));
   input.focus();
 });
 
@@ -105,6 +110,16 @@ function removeToDo(el) {
   List[el.id].trash = true;
 }
 
+//Editando a tarefa
+
+function editTodo(el) {
+  isedit = true;
+  editid = el.id
+  const text = el.parentNode.querySelector(".text").innerText;
+  input.value = text;
+  input.focus();
+}
+
 //selescionando dinamicamente os elementos clicados
 
 list.addEventListener("click", (event) => {
@@ -114,6 +129,9 @@ list.addEventListener("click", (event) => {
   }
   if (el.classList.contains("de")) {
     removeToDo(el);
+  }
+  if (el.classList.contains("ed")) {
+    editTodo(el);
   }
   localStorage.setItem("TODOLIST", JSON.stringify(List));
 });
