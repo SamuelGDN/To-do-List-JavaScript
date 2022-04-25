@@ -108,6 +108,12 @@ function completeToDo(el) {
 function removeToDo(el) {
   el.parentNode.remove();
   List[el.id].trash = true;
+  if(isedit){
+    if(editid == el.id){
+      isedit = false
+      input.value = ''
+    }
+  }
 }
 
 //Editando a tarefa
