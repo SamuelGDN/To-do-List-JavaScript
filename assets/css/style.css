@@ -59,7 +59,7 @@ body.dark-theme{
   height: 30px;
   position: absolute;
   right: 30px;
-  top: 55px;
+  top: 48.5px;
   border: 2px solid #fff;
   padding: 3px;
   border-radius: 25%;
@@ -121,7 +121,6 @@ body.dark-theme{
 .content {
   max-width: 100%;
   height: 67%;
-  /* max-height: 80%; */
   background-color: var(--content-color);
   color: var(--text-color);
   overflow-x: hidden;
