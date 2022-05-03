@@ -59,13 +59,14 @@ body.dark-theme{
   height: 30px;
   position: absolute;
   right: 30px;
-  top: 47px;
+  top: 48.5px;
   border: 2px solid #fff;
   padding: 3px;
   border-radius: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 3px;
 }
 
 .darkmd-toggle {
