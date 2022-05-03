@@ -163,7 +163,6 @@ body.dark-theme{
   margin: 0;
   font-size: 20px;
   width: 80%;
-  /* background-color: var(--content-color); */
   max-width: 70%;
   overflow-wrap: break-word;
 }
@@ -171,7 +170,6 @@ body.dark-theme{
 @media screen and (max-width: 500px) {
   .item p.text {
     max-width: 60%;
-    /* width: 70%; */
   }
 
   .item i.de {

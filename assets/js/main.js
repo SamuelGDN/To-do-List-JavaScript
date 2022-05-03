@@ -18,6 +18,7 @@ function myEscope() {
   let isedit = false;
   let editid;
 
+  //zerando qualquer valor que esteja no input
   input.value = "";
 
   //Recuperando Lista(Se houver) do LocalStorage
@@ -52,7 +53,7 @@ function myEscope() {
     <i class="fa ${DONE} co" job="complete" id="${id}"></i>
     <p class="text ${LINE}" id="task${id}">${todo}</p>
     <i class="fa fa-trash-o de" job="delete" id="${id}"></i> 
-    <i class="fa fa-pencil ed" job="delete" id="${id}"></i> 
+    <i class="fa fa-pencil ed" job="edit" id="${id}"></i> 
     </li>
      `;
     list.insertAdjacentHTML(position, item);
@@ -131,15 +132,10 @@ function myEscope() {
 
   list.addEventListener("click", (event) => {
     const el = event.target;
-    if (el.classList.contains("co")) {
-      completeToDo(el);
-    }
-    if (el.classList.contains("de")) {
-      removeToDo(el);
-    }
-    if (el.classList.contains("ed")) {
-      editTodo(el);
-    }
+    const job = el.getAttribute('job')
+    if (job == "complete") completeToDo(el);
+    if (job == "delete") removeToDo(el);
+    if (job == "edit") editTodo(el);
     localStorage.setItem("TODOLIST", JSON.stringify(List));
   });
 

@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Tarefas</title>
-    <link rel="shortcut icon" type="imagex/png" href="./assets/img/check.png">
-    <link rel="stylesheet" href="./assets/css/font-awesome.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
+    <link rel="shortcut icon" type="imagex/png" href="./assets/img/check.png" />
+    <link rel="stylesheet" href="./assets/css/font-awesome.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
     <section class="container">
-        <header class="header">
-            <span class="darkmd-toggle">
-                <button class="fa fa-moon-o" id="theme-button"></button>
-            </span>
-            <span class="clear">
-                <button class="fa fa-refresh"></button>
-            </span>
-            <div id="date"></div>
-        </header>
-        <main class="content">
-            <ul id="list">       
-                <!-- <li class="item">
-                    <i class="fa fa-circle-thin co" job="complete" id="0"></i>
-                    <p class="text">Tomar café</p>
-                    <i class="fa fa-trash-o de" job="delete" id="0"></i> 
-                </li> -->
-            </ul>
-        </main>
-        <footer class="add-to-do">
-            <button class="fa fa-plus-circle" id="addTask"></button>
-            <input type="text" id="input" class="input-tarefa" placeholder="Digite uma Tarefa">
-        </footer>
+      <header class="header">
+        <span class="darkmd-toggle">
+          <button class="fa fa-moon-o" id="theme-button"></button>
+        </span>
+        <span class="clear">
+          <button class="fa fa-refresh"></button>
+        </span>
+        <div id="date"></div>
+      </header>
+      <main class="content">
+        <ul id="list">
+        <!-- 
+          <li class="item">
+            <i class="fa fa-circle-thin co" job="complete" id="3"></i>
+            <p class="text" id="task3">Fazer Café</p>
+            <i class="fa fa-trash-o de" job="delete" id="3"></i>
+            <i class="fa fa-pencil ed" job="delete" id="3"></i>
+          </li>
+        -->  
+        </ul>
+      </main>
+      <footer class="add-to-do">
+        <button class="fa fa-plus-circle" id="addTask"></button>
+        <input
+          type="text"
+          id="input"
+          class="input-tarefa"
+          placeholder="Digite uma Tarefa"
+        />
+      </footer>
     </section>
-    
+
     <script src="./assets/js/main.js"></script>
-</body>
+  </body>
 </html>
