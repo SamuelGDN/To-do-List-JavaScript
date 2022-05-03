@@ -178,6 +178,10 @@ body.dark-theme{
     width: 5%;
   }
 
+  #list .item i.de:hover, #list .item i.ed:hover {
+    color: var(--text-color);
+  }
+
   .item i.ed {
     width: 5%;
     padding-right: 5px;
